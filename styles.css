@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Source Sans Pro", sans-serif;
+}
+body {
+  background-color: #020824;
+}
+nav {
+  display: flex;
+  height: 80px;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px 0 100px;
+  flex-wrap: none;
+}
+nav .logo {
+  color: #fff;
+  font-size: 35px;
+  font-weight: 600;
+}
+nav .logo img {
+  height: 76px;
+}
+nav ul {
+  display: flex;
+  flex-wrap: none;
+  list-style: none;
+  align-items: center;
+}
+nav ul li {
+  margin: 0 5px;
+}
+nav ul li a {
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+form {
+  display: flex;
+  align-items: center;
+}
+nav input[type="text"] {
+  height: 40px;
+  border: 2px solid #0158ff;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 4px;
+  background-color: #162135;
+  color: #ccc;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 8px 12px 8px 12px;
+}
+input:placeholder-shown {
+  font-style: italic;
+}
+.demo-btn {
+  display: inline-block;
+  text-decoration: none;
+  padding: 8px 20px;
+  border-radius: 0 4px 4px 0;
+  background-image: linear-gradient(85deg, #005cff, #0050ff);
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 700;
+}
+nav .menu-btn i {
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+}
+input[type="checkbox"] {
+  display: none;
+}
+@media (max-width: 1000px) {
+  nav {
+    padding: 0 40px 0 50px;
+  }
+}
+@media (max-width: 1330px) {
+  nav .menu-btn i {
+    display: block;
+  }
+  #click:checked ~ .menu-btn i:before {
+    content: "\f00d";
+  }
+  nav ul {
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    background: #fff;
+    height: 100vh;
+    width: 100%;
+    text-align: left;
+    display: block;
+    transition: all 0.3s ease;
+    padding: 30px 10px 32px 10px;
+    border-radius: 4px;
+  }
+  #click:checked ~ ul {
+    left: 0;
+  }
+  nav ul li {
+    width: 100%;
+    margin: 40px 0;
+  }
+  nav ul li a {
+    width: 100%;
+    margin-left: -100%;
+    display: block;
+    font-size: 20px;
+    color: #0050ff;
+    font-weight: 700;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  nav input[type="text"] {
+    background-color: #fff;
+  }
+  .demo-btn {
+    color: #fff;
+  }
+  #click:checked ~ ul li a {
+    margin-left: 0px;
+  }
+}
